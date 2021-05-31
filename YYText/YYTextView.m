@@ -1944,6 +1944,12 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
 #pragma mark - Private Init
 
 - (void)_initTextView {
+    if (@available(iOS 11.0, *)) {
+        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     self.delaysContentTouches = NO;
     self.canCancelContentTouches = YES;
     self.multipleTouchEnabled = NO;
