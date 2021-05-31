@@ -1948,7 +1948,6 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         // Fallback on earlier versions
-        self.automaticallyAdjustsScrollViewInsets = NO;
     }
     self.delaysContentTouches = NO;
     self.canCancelContentTouches = YES;
